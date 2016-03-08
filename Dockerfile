@@ -1,0 +1,8 @@
+FROM java:7
+RUN apt-get update
+RUN apt-get install -y wget curl
+ADD src /root/javahelloworld/src/
+WORKDIR /root/javahelloworld/
+RUN mkdir bin
+RUN ["javac","-d","bin","src/HelloWorld.java"]
+ENTRYPOINT ["java","-cp","bin","HelloWorld"]
