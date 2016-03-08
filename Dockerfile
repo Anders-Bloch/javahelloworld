@@ -4,5 +4,6 @@ RUN apt-get install -y wget curl
 ADD src /root/javahelloworld/src/
 WORKDIR /root/javahelloworld/
 RUN mkdir bin
+RUN echo "Hello world build..."
 RUN ["javac","-d","bin","src/HelloWorld.java"]
 ENTRYPOINT ["java","-cp","bin","HelloWorld"]
