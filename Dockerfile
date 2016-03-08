@@ -6,4 +6,5 @@ WORKDIR /root/javahelloworld/
 RUN mkdir bin
 RUN echo "Hello world build..."
 RUN ["javac","-d","bin","src/HelloWorld.java"]
+RUN echo "Test 2"
 ENTRYPOINT ["java","-cp","bin","HelloWorld"]
